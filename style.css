@@ -367,7 +367,7 @@ ul {
    
 }
 .skyline img {
-    width: 650px;
+    width: 100%;
     height: auto;
     border-radius: 20px;
 }
