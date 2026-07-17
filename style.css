@@ -1079,6 +1079,11 @@ textarea:focus {
         
         
     }
+        .skyline img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
 
     .about-grid,
     .gypsum-grid,
