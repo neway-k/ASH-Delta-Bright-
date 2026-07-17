@@ -364,8 +364,13 @@ ul {
 .skyline {
     width: 100%;
     max-width: 480px;
+   
 }
-
+.skyline img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 .s-blue {
     fill: #123f66;
 }
@@ -565,64 +570,133 @@ ul {
 }
 
 .brand-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 24px;
     margin-top: 28px;
-    
 }
 
-.brand-card {
+.brand-group {
+    flex: 1 1 260px;
+    max-width: 300px;
     background: var(--white);
     border: 1px solid var(--line);
     border-radius: var(--radius);
     overflow: hidden;
     transition: transform .2s ease, box-shadow .2s ease;
-    display: flex;
-    flex-direction: column;
 }
 
-.brand-card:hover {
-    transform: translateY(-4px);
+.brand-group:hover {
+    transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
 
-.brand-card img {
+.brand-group-title {
+    margin: 0;
+    padding: 12px 16px;
+    background: var(--blue-pale);
+    color: var(--blue-deep);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.brand-photos {
+    display: flex;
+    gap: 4px;
+}
+
+.brand-photo-item {
+    flex: 1;
+    position: relative;
+}
+
+.brand-photo-item img {
     width: 100%;
     aspect-ratio: 4/5;
     object-fit: cover;
+    display: block;
 }
 
-.brand-card-body {
+.brand-photo-label {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    text-align: center;
+    background: rgba(10, 47, 78, .75);
+    color: var(--white);
+    font-size: .72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    padding: 4px 6px;
+    border-radius: 5px;
+}
+
+.brand-group-meta {
     padding: 14px 16px;
-    display: flex;
-    flex-direction: column;
 }
 
-.brand-card-body h4,
-.brand-card-more h4 {
-    font-family: var(--font-display);
-    color: var(--blue-deep);
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0 0 2px;
-}
-
-.brand-card-body span,
-.brand-card-more span {
+.brand-group-meta span {
     font-size: .82rem;
     color: var(--steel);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.brand-call {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-size: .86rem;
+    color: var(--ink);
+}
+
+.brand-call svg {
+    width: 16px;
+    height: 16px;
+    color: var(--green);
+    flex-shrink: 0;
+}
+
+.brand-call strong {
+    color: var(--blue-deep);
+}
+
+.brand-call a {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.brand-call a:hover {
+    color: var(--green);
 }
 
 .brand-card-more {
+    flex: 1 1 260px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 8px;
     padding: 24px 16px;
     background: var(--green-pale);
-    border-style: dashed;
-    border-color: var(--green);
+    border: 1px dashed var(--green);
+    border-radius: var(--radius);
+}
+
+.brand-card-more h4 {
+    font-family: var(--font-display);
+    color: var(--blue-deep);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
 }
 
 .brand-card-more svg {
@@ -632,6 +706,7 @@ ul {
 }
 
 .brand-card-more span {
+    font-size: .82rem;
     color: var(--green);
 }
 
@@ -654,7 +729,6 @@ ul {
     margin-top: 2px;
     color: var(--green);
 }
-
 /* Why choose us */
 .why-grid {
     display: grid;
@@ -1002,6 +1076,8 @@ textarea:focus {
         order: -1;
         max-width: 360px;
         margin: 0 auto 20px;
+        
+        
     }
 
     .about-grid,
